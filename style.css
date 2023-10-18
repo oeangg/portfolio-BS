@@ -21,3 +21,100 @@ section {
 #gallery .row > * {
     padding: 3PX;
 }
+
+#mypc {
+    margin-top: 50px;
+}
+
+.pc-box {
+    position: relative;
+    background-color: #0D6EFD;
+    border-radius: 10px;
+    height: 400px;
+    transform-style: preserve-3d;
+}
+
+.pc-box::before {
+    content: 'MY';
+    position: absolute;
+    color: #fff;
+    font-size: 4em;
+    font-weight: bold;
+    font-style: italic;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%,0);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.pc-box:hover::before {
+   
+    opacity: 0.2;
+}
+
+.pc-box::after {
+    content: 'Computer';
+    position: absolute;
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+    font-style: italic;
+    top: 270px;
+    transition: 0.5s;
+    opacity: 0;
+   
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+
+
+.pc-box:hover::after {
+   
+    opacity: 0.2;
+}
+
+.pc-name {
+    color: #ddd;
+    text-align: center;
+    font-size: 2em;
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transform: translate3d(0,0,30px);
+}
+
+.pc-box:hover .pc-name {
+    top: 20px;
+    opacity: 1;
+}
+
+.pc-detail {
+    position: absolute;
+    bottom: 0;                    
+    left: 50%; /* bikin margin tengah */
+    transform: translate3d(-50%,0,50px); /* bikin margin tengah */
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.pc-box:hover .pc-detail {
+    opacity: 1;
+    bottom: 20px;
+}
+
+.pc-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,100px);
+    max-width: 200px;
+    transition: 0.5s;
+}
+
+.pc-box:hover .pc-image {
+    transform: translate3d(-50%,-50%,100px) rotate(10deg) scale(1.2);
+}
